@@ -219,3 +219,18 @@ function shapeHandleClick() {
     })
 })
 }
+
+// Vanilla for dropdown - reveals (hidden by default) form and displays it in same place when using filter
+function dropdpwnFunction() {
+    var allForms = document.getElementsByTagName('form');
+    var dropdown = document.getElementById("dropdown");
+    var visibleForm = document.getElementById("visible"); 
+    if (dropdown.value != "-1") {
+        var form = document.getElementById(dropdown.value);
+        for (var i = 0; i < allForms.length; i++) {
+            allForms[i].setAttribute("class", "display-none");
+        }
+        form.setAttribute("class", "");
+        visibleForm.append(form)
+    }
+}
