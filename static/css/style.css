@@ -224,6 +224,7 @@ select {
   }
 }
 
+/* to hide forms by default */
 .display-none {
-        display: none;
-    }
+  display: none;
+}
