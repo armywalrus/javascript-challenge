@@ -1,4 +1,4 @@
-// Level 1
+// Level 2
 
 // Assign the data from `data.js` to a descriptive variable
 var tableData = data;
@@ -63,8 +63,6 @@ function handleClick() {
     })
 })
 }
-
-// Level 2
 
 // City filter
 // Use d3 to select the filter button
