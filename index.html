@@ -25,14 +25,25 @@
       <h1>UFO Sightings</h1>
       <p>The Truth is Out There</p>
     </div>
+
+  <select id="dropdown" onchange="dropdpwnFunction()">
+    <option value="-1">-- Select --</option>
+    <option value="date">Filter by Date</option>
+    <option value="city">Filter by City</option>
+    <option value="state">Filter by State</option>
+    <option value="country">Filter by Country</option>
+    <option value="shape">Filter by Shape</option>
+  </select>
+
+
     <div class="container">
       <div class="row margin-top-50">
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">Date Search</div>
+              <!-- <div class="panel-heading">Date Search</div> -->
               <div class="panel-body">
-                <form>
+                <form class="display-none" id = "date">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
@@ -51,9 +62,9 @@
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">City Search</div>
+              <!-- <div class="panel-heading">City Search</div> -->
               <div class="panel-body">
-                <form>
+                <form class="display-none" id = "city">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
@@ -72,9 +83,9 @@
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">State Search</div>
+              <!-- <div class="panel-heading">State Search</div> -->
               <div class="panel-body">
-                <form>
+                <form class="display-none" id = "state">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
@@ -93,9 +104,9 @@
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">Country Search</div>
+              <!-- <div class="panel-heading">Country Search</div> -->
               <div class="panel-body">
-                <form>
+                <form class="display-none" id = "country">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
@@ -114,9 +125,9 @@
         <div class="col-md-2">
           <aside class="filters">
             <div class="panel panel-default">
-              <div class="panel-heading">Shape Search</div>
+              <!-- <div class="panel-heading">Shape Search</div> -->
               <div class="panel-body">
-                <form>
+                <form class="display-none" id = "shape">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
@@ -156,6 +167,21 @@
         </div>
       </div>
     </div>
+
+<script type="text/javascript">
+
+  function dropdpwnFunction() {
+      var allForms = document.getElementsByTagName('form');
+      var dropdown = document.getElementById("dropdown");
+      if (dropdown.value != "-1") {
+          var form = document.getElementById(dropdown.value);
+          for (var i = 0; i < allForms.length; i++) {
+              allForms[i].setAttribute("class", "display-none");
+          }
+          form.setAttribute("class", "");
+      }
+  }
+</script>
             
 
     <footer class="footer">
